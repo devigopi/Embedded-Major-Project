@@ -17,7 +17,7 @@ The Arduino sends digital signals to each segment of the display. The segments a
 ## Code for Execution
 
 The following Arduino code is used to control the sequential ON and OFF operation of the seven-segment display segments.
-\\
+```
 int pins[] = {2, 3, 4, 5, 6, 7, 8};
 
 void setup() {
@@ -46,7 +46,7 @@ void loop() {
     }
   }
 }
-\\
+```
 
 ## Output Video Link:
 You can view the project output in the following link:
