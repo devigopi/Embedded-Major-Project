@@ -14,6 +14,43 @@ The objective of this project is to understand how to interface a seven-segment 
 ## Working Principle
 
 The Arduino sends digital signals to each segment of the display. The segments are turned ON sequentially with a predefined delay. After all segments are ON, the Arduino turns OFF the segments sequentially in reverse order. This process continues in a loop, creating a continuous ON and OFF sequence pattern.
+## Code for Execution
+
+The following Arduino code is used to control the sequential ON and OFF operation of the seven-segment display segments.
+int pins[] = {2, 3, 4, 5, 6, 7, 8};
+
+void setup() {
+  for (int i = 0; i < 7; i++) {
+    pinMode(pins[i], OUTPUT);
+    digitalWrite(pins[i], LOW); 
+  }
+}
+
+void loop() {
+  for (int i = 0; i < 7; i++) {
+    digitalWrite(pins[i], HIGH);
+    if (i >= 5) {
+      delay(200); 
+    } else {
+      delay(1000);
+    }
+  }
+
+  for (int i = 6; i >= 0; i--) {
+    digitalWrite(pins[i], LOW);
+    if (i >= 5) {
+      delay(200);
+    } else {
+      delay(1000);
+    }
+  }
+}
+## Output Video
+
+You can view the project output in the following link:
+
+## Output Video Link:
+https://videotourl.com/videos/1775221546566-7f1b6d13-dbc1-485f-80f3-deea03abd732.mp4
 
 ## Applications
 
